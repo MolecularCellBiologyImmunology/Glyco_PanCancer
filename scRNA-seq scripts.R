@@ -5,7 +5,7 @@
 ##### Integration ####
 
 library(Seurat)
-dir <- #Directory where the .cvs files are
+dir <- #Directory where the .cvs files with the scRNA-Seq data are
 setwd(dir)
 files <- list.files(pattern = ".cvs$")
 
