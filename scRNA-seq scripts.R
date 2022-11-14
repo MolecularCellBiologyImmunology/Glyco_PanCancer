@@ -50,3 +50,10 @@ seurat_integrated <- IntegrateData(anchorset = seurat_anchors, features.to.integ
 names(a) <- colnames(seurat_integrated)
 seurat_integrated$Class <- a
 
+tumor <- seurat_integrated
+tumor <- ScaleData(tumor, verbose = FALSE)
+tumor <- RunPCA(tumor, verbose = FALSE)
+tumor <- RunUMAP(tumor, reduction = "pca", dims = 1:30)
+tumor <- FindNeighbors(tumor, dims = 1:30)
+tumor <- FindClusters(tumor, resolution = 1)
+DimPlot(tumor, reduction = "umap", label = T)
