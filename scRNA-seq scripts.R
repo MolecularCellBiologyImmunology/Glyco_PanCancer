@@ -5,8 +5,8 @@
 ##### Integration ####
 
 library(Seurat)
-dir <- #Directory where are .cvs files
-setwd("O:/j.rodriguezc/R Analysis/Integrated - Tumor cells/Data")
+dir <- #Directory where the .cvs files are
+setwd(dir)
 files <- list.files(pattern = ".cvs$")
 
 seurat_list <- list()
